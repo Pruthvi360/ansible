@@ -6,3 +6,53 @@ Note: if it is not downloading 2.10 version of ansible use below command
 python3 -m pip install ansible
 python3 -m pip install --upgrade ansible
 ansible-galaxy collection install community.docker   > ANSIBLE GALAXY HUB IS TO CREATE AND SHARE NEW EXTENSIONS TO COMUUNITY > ANSIBLE TO MANAGE DOCKER CONTAINERS ON REMOTE MACHINE
+
+mkdir ansible_automate_deployment
+cd ansible_automate_deployment
+touch inventory
+touch ansible.cfg
+nano ansible.cfg
+
+[defaults]
+
+inventory = inventory
+
+host_key_checking = False
+
+deprecation_warnings = False
+
+remote_user = root
+
+#private_key_file = 
+
+save and exit out of the ansible.cfg file
+
+tocuh install_docker.yml
+nano install_docker.yml
+
+---
+ - host: all
+ 
+   become: yes
+   tasks:
+   
+   
+   #install docker
+   # --
+   #
+   #todo: make sure you replace root in the username of yours remote server
+   
+   - name: install prerequisites
+     apt:
+       name:
+        - apt-transport-https
+        - ca-certficates
+        - curl
+        - gnupg-agent
+        - software-properties-common
+       update_cache: yes
+       
+    - name: add apt-key
+      apt_key: 
+        url: https://dow
+  
