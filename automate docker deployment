@@ -1,0 +1,8 @@
+PRE-REQUISITES TO AUTOMATE DOCKER DEPLOYMENT
+ 
+install ansible on linux machine
+apt install ansible -y
+Note: if it is not downloading 2.10 version of ansible use below command
+python3 -m pip install ansible
+python3 -m pip install --upgrade ansible
+ansible-galaxy collection install community.docker   > ANSIBLE GALAXY HUB IS TO CREATE AND SHARE NEW EXTENSIONS TO COMUUNITY > ANSIBLE TO MANAGE DOCKER CONTAINERS ON REMOTE MACHINE
